@@ -1,0 +1,42 @@
+{
+    "$schema": "https://turborepo.org/schema.json",
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**", ".next/**"]
+      },
+      "test": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "e2e": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "start": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "lint": {
+        "outputs": []
+      },
+      "analyze": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "release": {
+        "dependsOn": ["^build", "build"],
+        "outputs": []
+      },
+      "publish-storybook": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "dev": {
+        "dependsOn": ["^build"],
+        "cache": false
+      }
+    }
+  }
+  
